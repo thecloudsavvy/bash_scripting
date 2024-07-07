@@ -1,0 +1,37 @@
+name: "Welcome the User"
+on: 
+    push:
+        branches: 
+            - master
+jobs: 
+    welcome:
+        runs-on: self-hosted
+        steps:
+            - name: "Create tester1 directory"
+              run: |
+                 rm -rf tester123
+                 rm -rf tester124
+                 rm -rf tester125 
+                 mkdir tester123 tester124 tester125
+                 cd tester123
+                 touch image.png
+                 cd ../tester124
+                 touch image124.png
+                 cd ../tester125
+                 touch image125.png
+
+            
+
+            - name: "Uses actions to upload the tester1 directory"
+              uses: actions/upload-artifact@v4
+              with: 
+                name: result
+                path: tester123
+
+
+            - name: "Install apache"
+              run: |
+                    sudo apt-get update
+                    sudo apt install apache2 -y
+             
+                 

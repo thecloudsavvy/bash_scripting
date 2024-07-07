@@ -1,3 +1,5 @@
 bulk_email.py
 domain.py
 path
+__pycache__
+requirements.txt

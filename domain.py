@@ -7,12 +7,6 @@ from email.mime.text import MIMEText
 # Load email addresses from CSV
 email_df = pd.read_csv('email.csv')
 
-# Email configuration
-smtp_server = 'mail.privateemail.com'
-smtp_port = 587
-email_user = 'domain@kloudninja.online'
-email_password = '@26Mujrab'
-
 # Email content
 subject = "Oakland Design Build"
 body = """
